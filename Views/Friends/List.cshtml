@@ -1,0 +1,42 @@
+@model List<WebApplication2.Models.FriendViewModel>
+
+@{
+    ViewData["Title"] = "لیست دوستان";
+}
+
+<section class="features-icons bg-light text-center py-5">
+    <div class="container">
+        <h2 class="mb-4">لیست دوستان من</h2>
+        <a asp-controller="Friends" asp-action="Create" class="btn btn-primary mb-4">
+            افزودن دوست جدید
+        </a>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover bg-white">
+                <thead class="table-light">
+                    <tr>
+                        <th>عکس</th>
+                        <th>شماره</th>
+                        <th>نام</th>
+                        <th>عملیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@item.ImageUrl" width="60" height="60"
+                                     style="object-fit:cover; border-radius:50%;" alt="@item.Name" />
+                            </td>
+                            <td>@item.Number</td>
+                            <td>@item.Name</td>
+                            <td>
+                                <a href="/Friends/Detail/@item.Number" class="btn btn-info btn-sm">مشاهده جزئیات</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

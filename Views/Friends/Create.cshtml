@@ -1,0 +1,27 @@
+@model WebApplication2.Models.FriendViewModel
+
+@{
+    ViewData["Title"] = "افزودن دوست";
+}
+
+<section class="py-5 bg-light">
+    <div class="container" style="max-width: 480px;">
+        <h2 class="mb-4 text-center">افزودن دوست جدید</h2>
+        <form asp-action="Create" method="post" class="card p-4 shadow-sm bg-white">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">نام</label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Number" class="form-label">شماره</label>
+                <input asp-for="Number" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="ImageUrl" class="form-label">آدرس عکس (مثلاً /images/Jack.png)</label>
+                <input asp-for="ImageUrl" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">ثبت</button>
+            <a asp-action="List" class="btn btn-link mt-2">بازگشت</a>
+        </form>
+    </div>
+</section>

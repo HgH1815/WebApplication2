@@ -1,0 +1,19 @@
+@model WebApplication2.Models.FriendViewModel
+
+@{
+    ViewData["Title"] = "جزئیات دوست";
+}
+
+<section class="py-5 bg-light">
+    <div class="container d-flex justify-content-center">
+        <div class="card shadow" style="width: 20rem;">
+            <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Name"
+                 style="height: 220px; object-fit: cover;">
+            <div class="card-body text-center">
+                <h5 class="card-title">@Model.Name</h5>
+                <p class="card-text">شماره : @Model.Number</p>
+                <a href="/Friends/List" class="btn btn-secondary">بازگشت به لیست</a>
+            </div>
+        </div>
+    </div>
+</section>
